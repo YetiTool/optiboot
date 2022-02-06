@@ -901,6 +901,7 @@ int main(void) {
 #if (LED_START_FLASHES > 0) || LED_DATA_FLASH || LED_START_ON
   /* Set LED pin as output */
   LED_DDR |= _BV(LED);
+  LED_PORT |= _BV(LED); // toggle LED first time to avoid reset blink due to Zhead LED control polarity
 #endif
 
 #if SOFT_UART
