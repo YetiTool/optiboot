@@ -142,8 +142,8 @@
     <BuildTarget>atmega2560 LED=E4 LED_START_FLASHES=0 LED_DATA_FLASH=1</BuildTarget>
     <CleanTarget>clean</CleanTarget>
     <ExternalMakeFilePath>..\..\bootloaders\optiboot\Makefile</ExternalMakeFilePath>
-    <PostBuildEvent>copy optiboot_atmega328.elf $(MSBuildProjectName).elf
-</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>

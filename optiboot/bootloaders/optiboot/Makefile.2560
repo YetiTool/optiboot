@@ -18,6 +18,17 @@ ifndef PRODUCTION
 atmega2560: $(PROGRAM)_atmega2560.lst
 endif
 
+HELPTEXT += "target atmega640    - atmega640p (40 pin, 128k)\n"
+atmega640: TARGET = atmega640p
+atmega640: MCU_TARGET = atmega640p
+atmega640: CFLAGS += $(COMMON_OPTIONS) -DBIGBOOT
+atmega640: AVR_FREQ ?= 16000000L
+atmega640: CFLAGS += $(UART_CMD)
+atmega640: $(PROGRAM)_atmega640p.hex
+ifndef PRODUCTION
+atmega640: $(PROGRAM)_atmega640p.lst
+endif
+
 
 atmega2560_isp: atmega2560
 atmega2560_isp: TARGET = atmega2560
